@@ -1,7 +1,14 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { budget } = useContext(AppContext);
+    const { budget, dispatch } = useContext(AppContext);
+
+    const handleBudgetChange = (newBudget) => {
+        dispatch({
+            type: 'SET_BUDGET',
+            payload: newBudget,
+        });
+    };
 
     return (
         <div className='alert alert-secondary'>
@@ -11,7 +18,7 @@ const Budget = () => {
                                 id='budget'
                                 value={budget}
                                 style={{size: 10}}
-                                onChange={(event) => {budget = event.target.value}}
+                                onChange={(event) => handleBudgetChange(event.target.value)}
                                 >
                 </input>
             </span>
