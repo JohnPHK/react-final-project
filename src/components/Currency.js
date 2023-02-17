@@ -7,7 +7,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 const Currency = () => {
-    const { dispatch,currency  } = useContext(AppContext);
+    const { dispatch  } = useContext(AppContext);
 
     const [title, setTitle] = useState("£ Pound");
 
